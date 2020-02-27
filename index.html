@@ -1,0 +1,38 @@
+ <!--
+Copyright (c) 2018 ml5
+
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+-->
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/tfjs.min.js"></script>
+</head>
+
+<body onresize="windowResized()">
+  <a href="https://aizoo.com"><img src=images/aizoocom.png height="30px"></a>
+  <h1 class='title'>借助TensorFlow.js</h1>
+  <h1 class='title'>让人脸口罩识别跑在您本地浏览器里面</h1>
+  <h5 class='title' id='tips'> 注意：部分手机拍摄的图片，读取出来是旋转90°，需要旋转正，为避免本demo过于复杂，本demo不对这种case进行处理</h3>
+  <div id="container">
+    <img src="images/demo.jpg" id="image" class="center">
+    <div id="text-container">
+      <p id="instruction" class="green-color">
+      <button id="uploader-btn" onClick="clickUploader()">打开本地图片</button>
+      <p class="green-color "> 或者将图片拖到这里 📂,  然后下方会显示结果</p>
+    
+      <p id="warning" class="result-color"></p>
+      <p class="result-color">
+        检测结果如下：
+      </p>
+      <input name="imgFile" type="file" id="fileUploader" accept="image/*" onChange="handleFiles()">
+    </div>
+    <canvas id="canvas"></canvas>
+  </div>
+  <script src="js/detection.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
